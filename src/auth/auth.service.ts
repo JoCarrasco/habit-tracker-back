@@ -23,6 +23,8 @@ export class AuthService {
             throw new UnauthorizedException();
         }
 
+        console.log(data, user);
+
         const isSamePassword = await bcrypt.compare(data.password, user.password);
         
         if (!isSamePassword) {

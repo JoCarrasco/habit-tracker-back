@@ -21,8 +21,6 @@ export class UserService {
         const user = await this.prismaService.user.findUnique({
             where: { email },
         });
-
-        delete user.password;
         
         return user;
     }
